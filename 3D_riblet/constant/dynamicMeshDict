@@ -49,6 +49,7 @@ correctFluxes
     (nHatf none)
     (rhoPhi none)
     (alphaPhi0.biofilm none)
+    (alphaPhiUn none) //THIS WAS ADDED TO REMOVE THE WARNING ABOUT CANNOT FIND surfaceScalarField alphaPhiUn
     (ghf none)
 );
 
