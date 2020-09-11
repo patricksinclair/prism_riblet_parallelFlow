@@ -36,26 +36,39 @@ convertToMeters 1e-6;
 // fluidY_nC $d_46_params.fluidY_nC; //the n0. of y-cells in the blocks in the surrounding fluid (e.g. ocean)
 // //
 
+ribletX_nC 8; //the no. of x-cells in the blocks on/above the riblets
+plateauX_nC 4; //the no. of x-cells in the blocks on/above the space between riblets
 
-ribletX_nC 15; //the no. of x-cells in the blocks on/above the riblets
-plateauX_nC 6; //the no. of x-cells in the blocks on/above the space between riblets
+surfaceY_nC 6; //the no. of y-cells in the blocks on the surface
+fluidY_nC 18; //the n0. of y-cells in the blocks in the surrounding fluid (e.g. ocean)
 
-surfaceY_nC 14; //the no. of y-cells in the blocks on the surface
-fluidY_nC 26; //the n0. of y-cells in the blocks in the surrounding fluid (e.g. ocean)
-
-systemZ_nC 120; //no. of z-cells throughout the system
+systemZ_nC 75; //no. of z-cells throughout the system
 z_grading 1; //z-cells grading throughout the system. uniform for now
 
-LBlockX_nC 12; //no. of x-cells in the LHS blocks
-RBlockX_nC 12; //no. of x-cells in the RHS blocks
+LBlockX_nC 8; //no. of x-cells in the LHS blocks
+RBlockX_nC 8; //no. of x-cells in the RHS blocks
 
-r_grading_x 1.5; //grading of the x-mesh on the RHS of the riblet
+//these are old values, they were too fine for dynmaic meshing.
+//we'll start with an initially coarser mesh so that mesh refinement is a bit more valid
+// ribletX_nC 15; //the no. of x-cells in the blocks on/above the riblets
+// plateauX_nC 6; //the no. of x-cells in the blocks on/above the space between riblets
+//
+// surfaceY_nC 14; //the no. of y-cells in the blocks on the surface
+// fluidY_nC 26; //the n0. of y-cells in the blocks in the surrounding fluid (e.g. ocean)
+//
+// systemZ_nC 120; //no. of z-cells throughout the system
+// z_grading 1; //z-cells grading throughout the system. uniform for now
+//
+// LBlockX_nC 12; //no. of x-cells in the LHS blocks
+// RBlockX_nC 12; //no. of x-cells in the RHS blocks
+
+r_grading_x 1.4; //grading of the x-mesh on the RHS of the riblet
 l_grading_x #calc "1./$r_grading_x";
 
-t_grading_y 4; //grading of the y-mesh on the top blocks (fluid regime)
+t_grading_y 3; //grading of the y-mesh on the top blocks (fluid regime)
 b_grading_y #calc "1./2."; //grading of the y-mesh on the blocks in the riblet channels
 
-outlet_xGrading 1; //x-grading of the RHS x-cells
+outlet_xGrading 0.8; //x-grading of the RHS x-cells
 inlet_xGrading #calc "1./$outlet_xGrading"; //x-grading of the inlet x-cells
 
 
