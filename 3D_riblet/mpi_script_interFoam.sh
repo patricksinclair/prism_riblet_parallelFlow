@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#$ -N parallelFlow-thinBiofilm # job name
+#$ -N parallelFlow-mediumBiofilm # job name
 #$ -V           # use all shell environment variables
 #$ -cwd         # run job in working directory
 # #$ -j y         # merge stdout and stderr to one file

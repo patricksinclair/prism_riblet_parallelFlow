@@ -29,7 +29,7 @@ regions
     {
       //chosen so that there's a layer of biofilm completely covering the system
       //with a prescribed thickness
-        box (-100 0 -100) (100 $bf_thickness_s 100);
+        box (-100 0 -100) (100 $bf_thickness_m 100);
         fieldValues
         (
             volScalarFieldValue alpha.biofilm 1

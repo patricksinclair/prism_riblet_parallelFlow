@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#$ -N d_23_thickBF_viscosity-- # job name
+#$ -N parallelFlow_mediumBiofilm_run2 # job name
 #$ -V           # use all shell environment variables
 #$ -cwd         # run job in working directory
 # #$ -j y         # merge stdout and stderr to one file
@@ -33,7 +33,7 @@ source ~/Programs/OpenFOAM/OpenFOAM-v1906/etc/bashrc
 #in case the job was stopped mid file writing, we'll delete the latest time directories (and hope that doesn't cause any issues itself)
 
 sed -i '/startFrom/c\startFrom       latestTime;' system/controlDict     #this is so openfoam starts from the latest time directory rather than from t=0. NOW ONLY CHANGES THE INTENDED KEYWORD.
-foamListTimes -processor -latestTime -rm                #openfoam command. deletes the latest time directories from the processor files
+#foamListTimes -processor -latestTime -rm                #openfoam command. deletes the latest time directories from the processor files
 
 # can be useful to know the name of the computer where the job is running
 echo "Job running on $( hostname ) "
